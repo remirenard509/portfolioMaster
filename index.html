@@ -9,75 +9,165 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     * {
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-    body {
-      margin: 0;
-      background-color: #f4f7fa;
-      color: #333;
-      padding: 2rem;
-    }
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 1rem;
-    }
-    header img {
-      width: 100px;
-      border-radius: 50%;
-    }
-    h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    h2 {
-      font-size: 1.3rem;
-      color: #1a73e8;
-      margin-top: 2rem;
-      margin-bottom: 0.5rem;
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
-    .skills, .project-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-    .card {
-      background: #f9fbfd;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-    .card img {
-      width: 100%;
-      max-height: 200px;
-      object-fit: contain;
-      border-radius: 6px;
-      margin-top: 0.5rem;
-    }
-    .btns a {
-      display: inline-block;
-      margin-right: 1rem;
-      margin-top: 0.5rem;
-      padding: 0.5rem 1rem;
-      background: #1a73e8;
-      color: white;
-      border-radius: 6px;
-      text-decoration: none;
-    }
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #f4f7fa, #e8f0fe);
+  color: #333;
+  padding: 0;
+}
+
+/* Container principal */
+.container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #eee;
+  padding-bottom: 1.5rem;
+}
+
+header h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #1a73e8;
+}
+
+header p {
+  margin-top: 0.5rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Boutons */
+.btns a {
+  display: inline-block;
+  margin: 0.5rem 1rem 0 0;
+  padding: 0.6rem 1.2rem;
+  background: #1a73e8;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btns a:hover {
+  background: #1559b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(26,115,232,0.2);
+}
+
+/* Titres */
+h2 {
+  font-size: 1.6rem;
+  color: #1a73e8;
+  margin-top: 2rem;
+  border-left: 5px solid #1a73e8;
+  padding-left: 0.6rem;
+}
+
+/* Compétences */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.skills ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skills li {
+  margin: 0.5rem 0;
+  padding: 0.4rem 0.8rem;
+  background: #f9fbfd;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.skills li:hover {
+  background: #e8f0fe;
+  transform: scale(1.02);
+}
+
+/* Grille des projets */
+.project {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* Cartes projet */
+.card {
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.card strong {
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.card p {
+  color: #555;
+  font-size: 0.95rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.card img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: auto;
+  transition: 0.3s;
+}
+
+.card img:hover {
+  transform: scale(1.03);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin: 2rem 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
   </style>
 </head>
 <body>
